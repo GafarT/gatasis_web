@@ -1,0 +1,38 @@
+<%- model_class = RelationIndustry -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => model_class.model_name.human.pluralize.titleize %></h1>
+</div>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th><%= model_class.human_attribute_name(:id) %></th>
+      <th><%= model_class.human_attribute_name(:industry_id) %></th>
+      <th><%= model_class.human_attribute_name(:product_id) %></th>
+      <th><%= model_class.human_attribute_name(:created_at) %></th>
+      <th><%=t '.actions', :default => t("helpers.actions") %></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @relation_industries.each do |relation_industry| %>
+      <tr>
+        <td><%= link_to relation_industry.id, relation_industry_path(relation_industry) %></td>
+        <td><%= Industry.find(relation_industry.industry_id).name %></td>
+        <td><%= Product.find(relation_industry.product_id).name %></td>
+        <td><%=l relation_industry.created_at %></td>
+        <td>
+          <%= link_to t('.edit', :default => t("helpers.links.edit")),
+                      edit_relation_industry_path(relation_industry), :class => 'btn btn-mini' %>
+          <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+                      relation_industry_path(relation_industry),
+                      :method => :delete,
+                      :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+                      :class => 'btn btn-mini btn-danger' %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<%= link_to t('.new', :default => t("helpers.links.new")),
+            new_relation_industry_path,
+            :class => 'btn btn-primary' %>

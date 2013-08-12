@@ -1,0 +1,18 @@
+<%= simple_form_for @product, :html => { :class => 'form-horizontal' } do |f| %>
+  <%= f.input :name %>
+  <%= f.input :series %>
+  <%= f.input :description %>
+  <%= f.input :specs %>
+  <%= f.input :brand %>
+  <%= f.association :sub_category, include_blank: t('.select_sub_category') %>
+  <%= f.input :remarks1 %>
+  <%= f.input :remarks2 %>
+  <%= f.input :remarks3 %>
+  <%= f.input :remarks4 %>
+  <%= f.file_field :product_picture1 %>
+  <div class="form-actions">
+    <%= f.button :submit, :class => 'btn-primary' %>
+    <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                products_path, :class => 'btn' %>
+  </div>
+<% end %>

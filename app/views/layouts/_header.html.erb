@@ -1,0 +1,36 @@
+<div class="container">
+    <div class="masthead">
+        <h3 class="muted">PT GATASIS INDONESIA</h3>
+    </div>
+    <div class="navbar">
+      <div class="navbar-inner">
+        <div class="container-fluid">
+          <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <div class="nav-collapse collapse">
+            <p class="navbar-text pull-right">
+              Logged in as <a href="#" class="navbar-link">Username</a>
+            </p>
+            <ul class="nav">
+              <li <%= "class = active" if current_page?(controller: 'static_pages', action: 'home') %>><%= link_to "Home", home_path %></li>
+              <li class="dropdown <%= "active" if params[:controller]=='industries' %>">
+                  <a href="#" class="dropdown-toggle" data-toggle="dropdown">Industries & Solutions</a>
+                  <ul class="dropdown-menu">
+                    <% Industry.select('id','name').each do |list_industry| %>
+                    <li><%= link_to list_industry.name, controller: 'industries', action: 'show', name: list_industry.name %></li>
+                    <% end %>
+                  </ul>
+                </li>
+              <li><%= link_to "Products", '#' %></li>
+              <li><%= link_to "Service & Support", '#' %></li>
+              <li <%= "class = active" if current_page?(controller: 'static_pages', action: 'about') %>><%= link_to "About", about_path %></li>
+              <li <%= "class = active" if current_page?(controller: 'static_pages', action: 'contact') %>><%= link_to "Contact Us", contact_path %></li>
+            </ul>
+          </div><!--/.nav-collapse -->
+        </div>
+      </div>
+    </div><!-- end navbar -->   
+</div>

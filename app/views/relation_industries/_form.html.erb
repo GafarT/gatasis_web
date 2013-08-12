@@ -1,0 +1,9 @@
+<%= simple_form_for @relation_industry, :html => { :class => 'form-horizontal' } do |f| %>
+  <%= f.association :industry, include_blank: t('.select_industry') %>
+  <%= f.association :product, include_blank: t('.select_product') %>
+  <div class="form-actions">
+    <%= f.button :submit, :class => 'btn-primary' %>
+    <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                relation_industries_path, :class => 'btn' %>
+  </div>
+<% end %>

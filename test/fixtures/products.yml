@@ -1,0 +1,25 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  name: MyString
+  series: MyString
+  description: MyText
+  specs: MyText
+  brand: MyString
+  sub_category_id: 1
+  remarks1: MyText
+  remarks2: MyText
+  remarks3: MyText
+  remarks4: MyText
+
+two:
+  name: MyString
+  series: MyString
+  description: MyText
+  specs: MyText
+  brand: MyString
+  sub_category_id: 1
+  remarks1: MyText
+  remarks2: MyText
+  remarks3: MyText
+  remarks4: MyText

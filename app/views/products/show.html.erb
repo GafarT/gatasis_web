@@ -1,0 +1,43 @@
+<%- model_class = Product -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => model_class.model_name.human.titleize %></h1>
+</div>
+
+<dl class="dl-horizontal">
+  <dt><strong><%= model_class.human_attribute_name(:name) %>:</strong></dt>
+  <dd><%= @product.name %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:series) %>:</strong></dt>
+  <dd><%= @product.series %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:description) %>:</strong></dt>
+  <dd><%= @product.description %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:specs) %>:</strong></dt>
+  <dd><%= @product.specs %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:brand) %>:</strong></dt>
+  <dd><%= @product.brand %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:sub_category_id) %>:</strong></dt>
+  <dd><%= @product.sub_category_id %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:remarks1) %>:</strong></dt>
+  <dd><%= @product.remarks1 %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:remarks2) %>:</strong></dt>
+  <dd><%= @product.remarks2 %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:remarks3) %>:</strong></dt>
+  <dd><%= @product.remarks3 %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:remarks4) %>:</strong></dt>
+  <dd><%= @product.remarks4 %></dd>
+</dl>
+
+<%= image_tag @product.product_picture1.url %>
+<%= image_tag @product.product_picture1.url(:medium) %>
+<%= image_tag @product.product_picture1.url(:thumb) %>
+
+<div class="form-actions">
+  <%= link_to t('.back', :default => t("helpers.links.back")),
+              products_path, :class => 'btn'  %>
+  <%= link_to t('.edit', :default => t("helpers.links.edit")),
+              edit_product_path(@product), :class => 'btn' %>
+  <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+              product_path(@product),
+              :method => 'delete',
+              :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+              :class => 'btn btn-danger' %>
+</div>
