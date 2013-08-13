@@ -6,9 +6,11 @@ GatasisWeb::Application.routes.draw do
   # Nanti coba dicek kembali kenapa tanpa ini tidak bisa jalan websitenya
   get 'industry/:name' => 'industries#show'
    # Nanti coba dicek kembali kenapa tanpa ini tidak bisa jalan websitenya
+  get 'sub_categories/new' => 'sub_categories#new'
   get 'sub_categories/:name' => 'sub_categories#show'
 
      # Nanti coba dicek kembali kenapa tanpa ini tidak bisa jalan websitenya
+  get 'categories/new' => 'categories#new'
   get 'categories/:name' => 'products#list'
 
      # Nanti coba dicek kembali kenapa tanpa ini tidak bisa jalan websitenya
