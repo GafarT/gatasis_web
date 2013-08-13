@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130812074623) do
+ActiveRecord::Schema.define(version: 20130813084833) do
 
   create_table "categories", force: true do |t|
     t.string   "name"
@@ -22,6 +22,47 @@ ActiveRecord::Schema.define(version: 20130812074623) do
     t.string   "category_picture1_content_type"
     t.integer  "category_picture1_file_size"
     t.datetime "category_picture1_updated_at"
+  end
+
+  create_table "frontpages", force: true do |t|
+    t.string   "carousel_caption1"
+    t.string   "carousel_lead1"
+    t.string   "carousel_caption2"
+    t.string   "carousel_lead2"
+    t.string   "carousel_caption3"
+    t.string   "carousel_lead3"
+    t.string   "marketing_heading1"
+    t.text     "marketing_desc1"
+    t.string   "marketing_heading2"
+    t.text     "marketing_desc2"
+    t.string   "marketing_heading3"
+    t.text     "marketing_desc3"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "carousel_pic1_file_name"
+    t.string   "carousel_pic1_content_type"
+    t.integer  "carousel_pic1_file_size"
+    t.datetime "carousel_pic1_updated_at"
+    t.string   "carousel_pic2_file_name"
+    t.string   "carousel_pic2_content_type"
+    t.integer  "carousel_pic2_file_size"
+    t.datetime "carousel_pic2_updated_at"
+    t.string   "carousel_pic3_file_name"
+    t.string   "carousel_pic3_content_type"
+    t.integer  "carousel_pic3_file_size"
+    t.datetime "carousel_pic3_updated_at"
+    t.string   "marketing_pic1_file_name"
+    t.string   "marketing_pic1_content_type"
+    t.integer  "marketing_pic1_file_size"
+    t.datetime "marketing_pic1_updated_at"
+    t.string   "marketing_pic2_file_name"
+    t.string   "marketing_pic2_content_type"
+    t.integer  "marketing_pic2_file_size"
+    t.datetime "marketing_pic2_updated_at"
+    t.string   "marketing_pic3_file_name"
+    t.string   "marketing_pic3_content_type"
+    t.integer  "marketing_pic3_file_size"
+    t.datetime "marketing_pic3_updated_at"
   end
 
   create_table "industries", force: true do |t|
@@ -51,6 +92,18 @@ ActiveRecord::Schema.define(version: 20130812074623) do
     t.string   "product_picture1_content_type"
     t.integer  "product_picture1_file_size"
     t.datetime "product_picture1_updated_at"
+    t.string   "product_picture2_file_name"
+    t.string   "product_picture2_content_type"
+    t.integer  "product_picture2_file_size"
+    t.datetime "product_picture2_updated_at"
+    t.string   "product_picture3_file_name"
+    t.string   "product_picture3_content_type"
+    t.integer  "product_picture3_file_size"
+    t.datetime "product_picture3_updated_at"
+    t.string   "product_pdf1_file_name"
+    t.string   "product_pdf1_content_type"
+    t.integer  "product_pdf1_file_size"
+    t.datetime "product_pdf1_updated_at"
   end
 
   create_table "relation_industries", force: true do |t|

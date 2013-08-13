@@ -1,6 +1,6 @@
 class IndustriesController < ApplicationController
-  before_action :set_industry, only: [:show, :edit, :update, :destroy]
-
+  before_action :set_industry, only: [ :edit, :update, :destroy]
+  before_action :set_industry_show, only: [:show]
   # GET /industries
   def index
     @industries = Industry.all
@@ -48,7 +48,12 @@ class IndustriesController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_industry
-      @industry = Industry.find_by_name(params[:name])
+      @industry = Industry.find_by_id(params[:id])
+    end
+
+    # Use callbacks to share common setup or constraints between actions.
+    def set_industry_show
+      @industry = Industry.find_by_name(params[:name].tr('-',' '))
     end
 
     # Only allow a trusted parameter "white list" through.

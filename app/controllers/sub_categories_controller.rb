@@ -1,6 +1,6 @@
 class SubCategoriesController < ApplicationController
-  before_action :set_sub_category, only: [:show, :edit, :update, :destroy]
-
+  before_action :set_sub_category, only: [:edit, :update, :destroy]
+  before_action :set_sub_category1, only: [:show]
   # GET /sub_categories
   # GET /sub_categories.json
   def index
@@ -67,8 +67,13 @@ class SubCategoriesController < ApplicationController
       @sub_category = SubCategory.find(params[:id])
     end
 
+    def set_sub_category1
+      @category = Category.find_by_name(params[:name].tr('-',' '))
+      @sub_category = @category.sub_categories
+    end
+
     # Never trust parameters from the scary internet, only allow the white list through.
     def sub_category_params
-      params.require(:sub_category).permit(:name, :description, :category_id)
+      params.require(:sub_category).permit(:name, :description, :category_id, :sub_category_picture1)
     end
 end

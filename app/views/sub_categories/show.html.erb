@@ -1,29 +1,33 @@
-<%- model_class = SubCategory -%>
-<div class="page-header">
-  <h1><%=t '.title', :default => model_class.model_name.human.titleize %></h1>
-</div>
-
-<dl class="dl-horizontal">
-  <dt><strong><%= model_class.human_attribute_name(:name) %>:</strong></dt>
-  <dd><%= @sub_category.name %></dd>
-  <dt><strong><%= model_class.human_attribute_name(:description) %>:</strong></dt>
-  <dd><%= @sub_category.description %></dd>
-  <dt><strong><%= model_class.human_attribute_name(:category_id) %>:</strong></dt>
-  <dd><%= @sub_category.category_id %></dd>
-</dl>
-<%= image_tag @sub_category.sub_category_picture1.url %>
-<%= image_tag @sub_category.sub_category_picture1.url(:medium) %>
-<%= image_tag @sub_category.sub_category_picture1.url(:thumb) %>
-
-
-<div class="form-actions">
-  <%= link_to t('.back', :default => t("helpers.links.back")),
-              sub_categories_path, :class => 'btn'  %>
-  <%= link_to t('.edit', :default => t("helpers.links.edit")),
-              edit_sub_category_path(@sub_category), :class => 'btn' %>
-  <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
-              sub_category_path(@sub_category),
-              :method => 'delete',
-              :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
-              :class => 'btn btn-danger' %>
+<% provide(:title, 'Category Products') %>
+<div class="row">
+	<div class="span3">
+    <%= render 'layouts/side_nav' %>
+	</div>
+	<div class="span9">
+		<ul class="breadcrumb">
+          <li>Products <span class="divider">/</span></li>
+          <li><%= @category.name %></li>
+      	</ul>
+      	  <div class="featurette">
+          <%= image_tag @category.category_picture1.url, class: 'featurette-image pull-right' %>
+    			<h3 class="featurette-heading"><%= @category.name %></h3>
+    			<p><%= @category.description %></p>
+  		  </div>
+        <br>
+        <div class="row-fluid">
+          <ul class="thumbnails">
+            <% @sub_category.each do |list_sub| %>
+              <li class="span4">
+                <div class="thumbnail">
+                  <%= link_to(image_tag(list_sub.sub_category_picture1.url),"/categories/#{list_sub.name.tr(' ','-')}") %>
+                  <div class="caption">
+                    <h3><%= list_sub.name %></h3>
+                    <p><%= list_sub.description %></p>
+                  </div>
+                </div>
+              </li>
+              <% end %>
+            </ul>
+        </div>
+	</div>
 </div>

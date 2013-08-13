@@ -27,14 +27,14 @@
         <td><%= link_to(image_tag(product.product_picture1.url(:thumb)), product_path(product)) %></td>
         <td><%= product.name %></td>
         <td><%= product.series %></td>
-        <td><%= product.description %></td>
-        <td><%= product.specs %></td>
+        <td><%= truncate(product.description, length: 100, separator: ' ') %></td>
+        <td><%= truncate(product.specs, length: 100, separator: ' ') %></td>
         <td><%= product.brand %></td>
         <td><%= product.sub_category_id %></td>
-        <td><%= product.remarks1 %></td>
-        <td><%= product.remarks2 %></td>
-        <td><%= product.remarks3 %></td>
-        <td><%= product.remarks4 %></td>
+        <td><%= truncate(product.remarks1, length: 100, separator: ' ') %></td>
+        <td><%= truncate(product.remarks2, length: 100, separator: ' ') %></td>
+        <td><%= truncate(product.remarks3, length: 100, separator: ' ') %></td>
+        <td><%= truncate(product.remarks4, length: 100, separator: ' ') %></td>
         <td><%=l product.created_at %></td>
         <td><%=l product.updated_at %></td>
         <td>

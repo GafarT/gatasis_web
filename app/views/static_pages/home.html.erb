@@ -2,22 +2,29 @@
 <div id="myCarousel" class="carousel slide">
       <div class="carousel-inner">
         <div class="item active">
-        	<%= image_tag("carousel/slide-01.jpg",alt: '') %>
+        	<%= image_tag @frontpage.carousel_pic1.url %>
           <div class="container">
             <div class="carousel-caption">
-              <h1>Barcode & Labeling.</h1>
-              <p class="lead">Give you power to track your inventory movement more accurate including storage, handling and distribution process.</p>
-              <a class="btn btn-large btn-success" href="#">View Our Products</a>
+              <h1><%= @frontpage.carousel_caption1 %></h1>
+              <p class="lead"><%= @frontpage.carousel_lead1.html_safe %></p>
             </div>
           </div>
         </div>
         <div class="item">
-          <%= image_tag("carousel/slide-02.jpg", alt: '') %>
+          <%= image_tag @frontpage.carousel_pic2.url %>
           <div class="container">
             <div class="carousel-caption">
-              <h1>Patient Wristbands.</h1>
-              <p class="lead">Provide solution for patient identification. Can be easily integrated with existing system.</p>
-              <a class="btn btn-large btn-success" href="#">Learn more</a>
+              <h1><%= @frontpage.carousel_caption2 %></h1>
+              <p class="lead"><%= @frontpage.carousel_lead2.html_safe %></p>
+            </div>
+          </div>
+        </div>
+        <div class="item">
+          <%= image_tag @frontpage.carousel_pic3.url %>
+          <div class="container">
+            <div class="carousel-caption">
+              <h1><%= @frontpage.carousel_caption3 %></h1>
+              <p class="lead"><%= @frontpage.carousel_lead3.html_safe %></p>
             </div>
           </div>
         </div>
@@ -28,22 +35,19 @@
 <div class="container marketing">
       <div class="row">
         <div class="span4">
-			<img class="img-circle" data-src="holder.js/140x140">
-          <h2>Heading</h2>
-          <p>Donec sed odio dui. Etiam porta sem malesuada magna mollis euismod. Nullam id dolor id nibh ultricies vehicula ut id elit. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Praesent commodo cursus magna, vel scelerisque nisl consectetur et.</p>
-          <p><a class="btn" href="#">View details &raquo;</a></p>
+			    <%= image_tag @frontpage.marketing_pic1.url %>
+          <h2><%= @frontpage.marketing_heading1 %></h2>
+          <%= @frontpage.marketing_desc1.html_safe %>
         </div>
         <div class="span4">
-          <img class="img-circle" data-src="holder.js/140x140">
-          <h2>Heading</h2>
-          <p>Donec sed odio dui. Etiam porta sem malesuada magna mollis euismod. Nullam id dolor id nibh ultricies vehicula ut id elit. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Praesent commodo cursus magna, vel scelerisque nisl consectetur et.</p>
-          <p><a class="btn" href="#">View details &raquo;</a></p>
+          <%= image_tag @frontpage.marketing_pic2.url %>
+          <h2><%= @frontpage.marketing_heading2 %></h2>
+          <%= @frontpage.marketing_desc2.html_safe %>
        </div>
         <div class="span4">
-          <img class="img-circle" data-src="holder.js/140x140">
-          <h2>Heading</h2>
-          <p>Donec sed odio dui. Etiam porta sem malesuada magna mollis euismod. Nullam id dolor id nibh ultricies vehicula ut id elit. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Praesent commodo cursus magna, vel scelerisque nisl consectetur et.</p>
-          <p><a class="btn" href="#">View details &raquo;</a></p>
+          <%= image_tag @frontpage.marketing_pic3.url %>
+          <h2><%= @frontpage.marketing_heading3 %></h2>
+          <%= @frontpage.marketing_desc3.html_safe %>
         </div>
       </div>
    <hr class="divider">

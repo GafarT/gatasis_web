@@ -1,0 +1,39 @@
+<div class="accordion" id="accordion2">
+  <% a = 0 %>
+  <% Category.select('id','name').each do |list_category| %>
+  <% a = a + 1 %>
+  <div class="accordion-group">
+    <div class="accordion-heading">
+      <a class="accordion-toggle" data-toggle="collapse" href="#collapse<%= a %> ">
+        <%= list_category.name %>
+      </a>
+    </div>
+    <div id="collapse<%= a %>" class="accordion-body collapse <%= 
+    if params[:name].tr('-',' ') == list_category.name
+        "in"
+     elsif !SubCategory.find_by_name(params[:name].tr('-',' ')).nil?
+        if SubCategory.find_by_name(params[:name].tr('-',' ')).category.name  == list_category.name
+            "in"
+        end
+      elsif !Product.find_by_name(params[:name].tr('_',' ')).nil?
+        if Product.find_by_name(params[:name].tr('_',' ')).sub_category.category.name == list_category.name
+          "in"
+        end
+     end  %>">
+      <div class="accordion-inner">
+        <ul>
+          <% SubCategory.where(category_id: list_category.id).each do |list_sub_category| %>
+        	<li><%= list_sub_category.name %>
+            <ul class="nav nav-list">
+                <% Product.where(sub_category_id: list_sub_category.id).each do |list_product| %>
+                <li <%= "class=active" if list_product.name == params[:name].tr('_',' ') %>><%= link_to list_product.name, "/products/details/#{list_product.name.tr(' ','_')}" %></li>
+                <% end %>
+            </ul>
+          </li>
+        	<% end %>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <% end %>
+</div>

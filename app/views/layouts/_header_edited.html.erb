@@ -11,6 +11,9 @@
             <span class="icon-bar"></span>
           </button>
           <div class="nav-collapse collapse">
+            <p class="navbar-text pull-right">
+              Logged in as <a href="#" class="navbar-link">Username</a>
+            </p>
             <ul class="nav">
               <li <%= "class = active" if current_page?(controller: 'static_pages', action: 'home') %>><%= link_to "Home", home_path %></li>
               <li class="dropdown <%= "active" if params[:controller]=='industries' %>">

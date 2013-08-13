@@ -1,0 +1,29 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  carousel_caption1: MyString
+  carousel_lead1: MyString
+  carousel_caption2: MyString
+  carousel_lead2: MyString
+  carousel_caption3: MyString
+  carousel_lead3: MyString
+  marketing_heading1: MyString
+  marketing_desc1: MyText
+  marketing_heading2: MyString
+  marketing_desc2: MyText
+  marketing_heading3: MyString
+  marketing_desc3: MyText
+
+two:
+  carousel_caption1: MyString
+  carousel_lead1: MyString
+  carousel_caption2: MyString
+  carousel_lead2: MyString
+  carousel_caption3: MyString
+  carousel_lead3: MyString
+  marketing_heading1: MyString
+  marketing_desc1: MyText
+  marketing_heading2: MyString
+  marketing_desc2: MyText
+  marketing_heading3: MyString
+  marketing_desc3: MyText

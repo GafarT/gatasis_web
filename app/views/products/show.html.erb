@@ -25,10 +25,21 @@
   <dt><strong><%= model_class.human_attribute_name(:remarks4) %>:</strong></dt>
   <dd><%= @product.remarks4 %></dd>
 </dl>
-
+<h3>Picture 1 of product: </h3>
 <%= image_tag @product.product_picture1.url %>
 <%= image_tag @product.product_picture1.url(:medium) %>
 <%= image_tag @product.product_picture1.url(:thumb) %>
+
+<h3>Picture 2 of product: </h3>
+<%= image_tag @product.product_picture2.url %>
+<%= image_tag @product.product_picture2.url(:medium) %>
+
+<h3>Picture 3 of product: </h3>
+<%= image_tag @product.product_picture3.url %>
+<%= image_tag @product.product_picture3.url(:medium) %>
+
+<h3>PDF File of product: </h3>
+<%= link_to "Download File", @product.product_pdf1.url %>
 
 <div class="form-actions">
   <%= link_to t('.back', :default => t("helpers.links.back")),

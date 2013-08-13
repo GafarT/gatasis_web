@@ -1,5 +1,6 @@
 class StaticPagesController < ApplicationController
   def home
+    @frontpage = Frontpage.find('1')
   end
 
   def products
@@ -12,5 +13,17 @@ class StaticPagesController < ApplicationController
   end
 
   def solutions
+  end
+
+  def catalog
+  end
+
+  def subcat
+  end
+
+  def spec
+  end
+
+  def services
   end
 end

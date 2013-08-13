@@ -1,23 +1,36 @@
 GatasisWeb::Application.routes.draw do
 
+
+  resources :frontpages
+
+  # Nanti coba dicek kembali kenapa tanpa ini tidak bisa jalan websitenya
+  get 'industry/:name' => 'industries#show'
+   # Nanti coba dicek kembali kenapa tanpa ini tidak bisa jalan websitenya
+  get 'sub_categories/:name' => 'sub_categories#show'
+
+     # Nanti coba dicek kembali kenapa tanpa ini tidak bisa jalan websitenya
+  get 'categories/:name' => 'products#list'
+
+     # Nanti coba dicek kembali kenapa tanpa ini tidak bisa jalan websitenya
+  get 'products/details/:name' => 'products#details'
+
+  resources :industries
+  resources :sub_categories
+  resources :categories
+  
   resources :relation_industries
 
   resources :products
-
-  resources :sub_categories
-
-  resources :categories
-
-  # Nanti coba dicek kembali kenapa tanpa ini tidak bisa jalan websitenya
-  get'industry/:name' => 'industries#show'
-
-  resources :industries
 
   get '/home' => 'static_pages#home'
   get '/products' => 'static_pages#products'
   get '/about' => 'static_pages#about'
   get '/contact' => 'static_pages#contact'
   get '/solutions' => 'static_pages#solutions'
+  get '/catalog' => 'static_pages#catalog'
+  get '/subcat' => 'static_pages#subcat'
+  get '/spec' => 'static_pages#spec'
+  get '/services' => 'static_pages#services'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

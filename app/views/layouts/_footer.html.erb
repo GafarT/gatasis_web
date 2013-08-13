@@ -3,29 +3,23 @@
 	<div class="row">
 		<div class="span4">
 			<ul>
-				<li><%= link_to "Industry Solutions",'' %>
-					<ul>
-						<li><%= link_to "Logistics",'' %></li>
-						<li><%= link_to "Warehouse",'' %></li>
-						<li><%= link_to "Healthcare",'' %></li>
-						<li><%= link_to "Retails",'' %></li>
-						<li><%= link_to "Manufacturing",'' %></li>
-						<li><%= link_to "Public Services",'' %></li>
-						<li><%= link_to "Livestock",'' %></li>
-					</ul>
+				<li>Industries & Solutions
+                  <ul>
+                    <% Industry.select('id','name').each do |list_industry| %>
+                        <li><%= link_to list_industry.name, controller: 'industries', action: 'show', name: list_industry.name.tr(' ', '-') %></li>
+                    <% end %>
+                  </ul>
 				</li>
 			</ul>
 		</div>
 		<div class="span4">
 			<ul>
-				<li><%= link_to "Products", '' %>
-					<ul>
-						<li><%= link_to "Barcode & Labeling",'' %></li>
-						<li><%= link_to "Mobile Terminal",'' %></li>
-						<li><%= link_to "Label & Ribbons",'' %></li>
-						<li><%= link_to "Wristbands",'' %></li>
-						<li><%= link_to "Accessories",'' %></li>
-					</ul>
+				<li>Products
+                  <ul>
+                    <% Category.select('id','name').each do |list_category| %>
+                        <li><%= link_to list_category.name, controller: 'sub_categories', action: 'show', name: list_category.name.tr(' ', '-') %></li>
+                    <% end %>
+                  </ul>
 				</li>
 				<li><%= link_to "Services & Support",''%></li>
 			</ul>

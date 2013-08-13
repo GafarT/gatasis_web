@@ -1,5 +1,7 @@
 class ProductsController < ApplicationController
   before_action :set_product, only: [:show, :edit, :update, :destroy]
+  before_action :set_product1, only: [:list]
+  before_action :set_product2, only: [:details]
 
   # GET /products
   # GET /products.json
@@ -10,6 +12,14 @@ class ProductsController < ApplicationController
   # GET /products/1
   # GET /products/1.json
   def show
+  end
+
+  # list item
+  def list
+  end
+
+  # list item
+  def details
   end
 
   # GET /products/new
@@ -67,8 +77,19 @@ class ProductsController < ApplicationController
       @product = Product.find(params[:id])
     end
 
+    # Use callbacks to share common setup or constraints between actions.
+    def set_product1
+      @sub_category = SubCategory.find_by_name(params[:name].tr('-',' '))
+      @products = Product.where(sub_category_id: @sub_category.id)
+    end
+
+    # Use callbacks to share common setup or constraints between actions.
+    def set_product2
+      @product = Product.find_by_name(params[:name].tr('_',' '))
+    end
+
     # Never trust parameters from the scary internet, only allow the white list through.
     def product_params
-      params.require(:product).permit(:name, :series, :description, :specs, :brand, :sub_category_id, :remarks1, :remarks2, :remarks3, :remarks4)
+      params.require(:product).permit(:name, :series, :description, :specs, :brand, :sub_category_id, :remarks1, :remarks2, :remarks3, :remarks4, :product_picture1, :product_picture2, :product_picture3, :product_pdf1)
     end
 end

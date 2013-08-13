@@ -1,0 +1,1 @@
+json.extract! @frontpage, :carousel_caption1, :carousel_lead1, :carousel_caption2, :carousel_lead2, :carousel_caption3, :carousel_lead3, :marketing_heading1, :marketing_desc1, :marketing_heading2, :marketing_desc2, :marketing_heading3, :marketing_desc3, :created_at, :updated_at

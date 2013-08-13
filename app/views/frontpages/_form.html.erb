@@ -1,0 +1,37 @@
+<%= simple_form_for @frontpage, :html => { :class => 'form-horizontal' } do |f| %>
+  <%= f.input :carousel_caption1 %>
+  <%= f.input :carousel_lead1 %>
+  <%= f.label :carousel_pic1 %>
+  <%= f.file_field :carousel_pic1 %>
+
+  <%= f.input :carousel_caption2 %>
+  <%= f.input :carousel_lead2 %>
+  <%= f.label :carousel_pic2 %>
+  <%= f.file_field :carousel_pic2 %>
+
+  <%= f.input :carousel_caption3 %>
+  <%= f.input :carousel_lead3 %>
+  <%= f.label :carousel_pic3 %>
+  <%= f.file_field :carousel_pic3 %>
+
+  <%= f.input :marketing_heading1 %>
+  <%= f.input :marketing_desc1 %>
+  <%= f.label :marketing_pic1 %>
+  <%= f.file_field :marketing_pic1 %>
+
+  <%= f.input :marketing_heading2 %>
+  <%= f.input :marketing_desc2 %>
+  <%= f.label :marketing_pic2 %>
+  <%= f.file_field :marketing_pic2 %>
+
+  <%= f.input :marketing_heading3 %>
+  <%= f.input :marketing_desc3 %>
+  <%= f.label :marketing_pic3 %>
+  <%= f.file_field :marketing_pic3 %>
+
+  <div class="form-actions">
+    <%= f.button :submit, :class => 'btn-primary' %>
+    <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                frontpages_path, :class => 'btn' %>
+  </div>
+<% end %>
