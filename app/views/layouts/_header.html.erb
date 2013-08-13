@@ -12,7 +12,7 @@
           </button>
           <div class="nav-collapse collapse">
             <ul class="nav">
-              <li <%= "class = active" if current_page?(controller: 'static_pages', action: 'home') %>><%= link_to "Home", home_path %></li>
+              <li <%= "class = active" if current_page?(controller: 'static_pages', action: 'home') %>><%= link_to "Home", root_path %></li>
               <li class="dropdown <%= "active" if params[:controller]=='industries' %>">
                   <a href="#" class="dropdown-toggle" data-toggle="dropdown">Industries & Solutions</a>
                   <ul class="dropdown-menu">

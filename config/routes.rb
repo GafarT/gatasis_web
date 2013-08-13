@@ -22,7 +22,7 @@ GatasisWeb::Application.routes.draw do
 
   resources :products
 
-  get '/home' => 'static_pages#home'
+  root 'static_pages#home'
   get '/products' => 'static_pages#products'
   get '/about' => 'static_pages#about'
   get '/contact' => 'static_pages#contact'
