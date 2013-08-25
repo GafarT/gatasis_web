@@ -1,7 +1,7 @@
 <%= simple_form_for @category, :html => { :class => 'form-horizontal' } do |f| %>
   <%= f.input :name %>
   <%= f.input :description %>
-  <%= f.file_field :category_picture1 %>
+  <div><%= f.file_field :category_picture1  %> >> Jpeg file, 300x300</div>
   <div class="form-actions">
     <%= f.button :submit, :class => 'btn-primary' %>
     <%= link_to t('.cancel', :default => t("helpers.links.cancel")),

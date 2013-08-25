@@ -1,4 +1,5 @@
 class IndustriesController < ApplicationController
+  before_action :admin_check, only: [:index, :new, :create, :edit, :update, :destroy]
   before_action :set_industry, only: [ :edit, :update, :destroy]
   before_action :set_industry_show, only: [:show]
   # GET /industries
@@ -46,6 +47,10 @@ class IndustriesController < ApplicationController
   end
 
   private
+
+    def admin_check
+      redirect_to root_url unless signed_in? && current_user.admin?
+    end
     # Use callbacks to share common setup or constraints between actions.
     def set_industry
       @industry = Industry.find_by_id(params[:id])
@@ -53,7 +58,11 @@ class IndustriesController < ApplicationController
 
     # Use callbacks to share common setup or constraints between actions.
     def set_industry_show
-      @industry = Industry.find_by_name(params[:name].tr('-',' '))
+      if !params[:name].nil?
+        @industry = Industry.find_by_name(params[:name].tr('-',' '))
+      else
+        @industry = Industry.find_by_id(params[:id])
+      end
     end
 
     # Only allow a trusted parameter "white list" through.

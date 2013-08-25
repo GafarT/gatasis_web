@@ -5,7 +5,7 @@
     <ul class="nav nav-list">
         <li class="nav-header">Industries & Solutions</li>
         <% Industry.select('id','name').each do |list_industry| %>
-        <li <%= "class = active" if current_page?(controller: 'industries', action: 'show', name: list_industry.name) %>><%= link_to list_industry.name, controller: 'industries', action: 'show', name: list_industry.name.tr(' ','-') %></li>
+        <li <%= "class = active" if current_page?(controller: 'industries', action: 'show', name: list_industry.name.tr(' ','-')) %>><%= link_to list_industry.name, controller: 'industries', action: 'show', name: list_industry.name.tr(' ','-') %></li>
         <% end %>
     </ul>
   </div>

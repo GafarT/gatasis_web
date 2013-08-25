@@ -1,4 +1,5 @@
 class RelationIndustriesController < ApplicationController
+  before_action :admin_check, only: [:index, :new, :create, :show, :edit, :update, :destroy]
   before_action :set_relation_industry, only: [:show, :edit, :update, :destroy]
 
   # GET /relation_industries
@@ -62,6 +63,11 @@ class RelationIndustriesController < ApplicationController
   end
 
   private
+
+    def admin_check
+      redirect_to root_url unless signed_in? && current_user.admin?
+    end
+  
     # Use callbacks to share common setup or constraints between actions.
     def set_relation_industry
       @relation_industry = RelationIndustry.find(params[:id])

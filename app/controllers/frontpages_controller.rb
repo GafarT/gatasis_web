@@ -1,4 +1,5 @@
 class FrontpagesController < ApplicationController
+  before_action :admin_check, only: [:index, :new, :create, :edit, :update, :destroy]
   before_action :set_frontpage, only: [:show, :edit, :update, :destroy]
 
   # GET /frontpages
@@ -62,6 +63,11 @@ class FrontpagesController < ApplicationController
   end
 
   private
+
+    def admin_check
+      redirect_to root_url unless signed_in? && current_user.admin?
+    end
+
     # Use callbacks to share common setup or constraints between actions.
     def set_frontpage
       @frontpage = Frontpage.find(params[:id])

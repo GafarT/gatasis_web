@@ -17,12 +17,13 @@
             <%= @product.description.html_safe %>
           </div>
           <div class="span6">
-            <div class="container"><%= image_tag @product.product_picture1.url %></div>
-            <div><center><button type="button" class="btn btn-info">Ask for enquiries</button>&nbsp;<button type="button" class="btn btn-success">Download pdf</button></center></div>
+            <div><center><%= image_tag @product.product_picture1.url %></center></div>
+            <div><center><a class="btn btn-info" href="mailto:sales@ptgatasisindonesia.com?subject=Enquiries <%= @product.brand + " " + @product.name %>  &body=Please write down your infomation details ( Contact Person, Company Name, Address, Occupation, Telephone No, Service Details )
+        ">Ask for enquiry</a>&nbsp;<%= link_to "Download Brochure", @product.product_pdf1.url, class: 'btn btn-success' %></center></div>
             <div class="fb-like" data-href="" data-width="450" data-show-faces="true" data-send="true"></div><br>
             <div class="row-fluid">
-              <div class="span6"><%= image_tag @product.product_picture2.url(:medium) %></div>
-              <div class="span6"><%= image_tag @product.product_picture3.url(:medium) %></div>
+              <div class="span6"><center><%= image_tag @product.product_picture2.url(:medium) %></center></div>
+              <div class="span6"><center><%= image_tag @product.product_picture3.url(:medium) %></center></div>
             </div>
           </div>
         </div>

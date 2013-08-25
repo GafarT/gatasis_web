@@ -1,5 +1,10 @@
 GatasisWeb::Application.routes.draw do
 
+  resources :users
+  resources :sessions, only: [:new, :create, :destroy]
+  get '/signup' => 'users#new'
+  get '/signin' => 'sessions#new'
+  match '/signout' => 'sessions#destroy', via: 'delete'
 
   resources :frontpages
 

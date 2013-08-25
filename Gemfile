@@ -51,6 +51,8 @@ gem 'paperclip', '~> 3.0'
 
 gem 'paperclip-dropbox', '>= 1'
 
+gem 'bcrypt-ruby', '3.0.1'
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
 

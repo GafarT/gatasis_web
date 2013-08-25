@@ -1,8 +1,8 @@
 <%= simple_form_for @sub_category, :html => { :class => 'form-horizontal' } do |f| %>
   <%= f.input :name %>
-  <%= f.input :description %>
+  <%= f.input :description %> limit to 100 characters only
   <%= f.association :category, include_blank: t('.select_category') %>
-  <%= f.file_field :sub_category_picture1 %>
+  <%= f.file_field :sub_category_picture1 %> JPEG file, size 260 x 260
   <div class="form-actions">
     <%= f.button :submit, :class => 'btn-primary' %>
     <%= link_to t('.cancel', :default => t("helpers.links.cancel")),

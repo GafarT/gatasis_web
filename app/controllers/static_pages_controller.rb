@@ -1,6 +1,6 @@
 class StaticPagesController < ApplicationController
   def home
-    @frontpage = Frontpage.find('1')
+    @frontpage = Frontpage.find_by(id: '1')
   end
 
   def products

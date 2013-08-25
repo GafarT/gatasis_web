@@ -5,14 +5,14 @@
   <%= f.input :specs %>
   <%= f.input :brand %>
   <%= f.association :sub_category, include_blank: t('.select_sub_category') %>
-  <%= f.input :remarks1 %>
-  <%= f.input :remarks2 %>
+  <%= f.input :remarks1 %> limit to 50 character only (akan muncul pada halaman categories/nama-sub-categories)
+  <%= f.input :remarks2 %> additional keterangan aplikasi untuk detail product
   <%= f.input :remarks3 %>
   <%= f.input :remarks4 %>
-  <%= f.file_field :product_picture1 %>
-  <%= f.file_field :product_picture2 %>
-  <%= f.file_field :product_picture3 %>
-  <%= f.file_field :product_pdf1 %>
+  <%= f.file_field :product_picture1 %> jpeg 420x420<br>
+  <%= f.file_field :product_picture2 %> jpeg 200x200<br>
+  <%= f.file_field :product_picture3 %> jpeg 200x200<br>
+  <%= f.file_field :product_pdf1 %> file brochure
   <div class="form-actions">
     <%= f.button :submit, :class => 'btn-primary' %>
     <%= link_to t('.cancel', :default => t("helpers.links.cancel")),

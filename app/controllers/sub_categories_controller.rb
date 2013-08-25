@@ -1,4 +1,5 @@
 class SubCategoriesController < ApplicationController
+  before_action :admin_check, only: [:new, :create, :edit, :update, :destroy]
   before_action :set_sub_category, only: [:edit, :update, :destroy]
   before_action :set_sub_category1, only: [:show]
   # GET /sub_categories
@@ -62,6 +63,11 @@ class SubCategoriesController < ApplicationController
   end
 
   private
+
+    def admin_check
+      redirect_to root_url unless signed_in? && current_user.admin?
+    end
+  
     # Use callbacks to share common setup or constraints between actions.
     def set_sub_category
       @sub_category = SubCategory.find(params[:id])

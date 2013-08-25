@@ -1,4 +1,5 @@
 class CategoriesController < ApplicationController
+  before_action :admin_check, only: [:index, :new, :create, :show, :edit, :update, :destroy]
   before_action :set_category, only: [:show, :edit, :update, :destroy]
 
   # GET /categories
@@ -29,7 +30,7 @@ class CategoriesController < ApplicationController
     respond_to do |format|
       if @category.save
         format.html { redirect_to @category, notice: 'Category was successfully created.' }
-        format.json { render action: 'show', status: :created, location: @category }
+        format.json { render action: 'index', status: :created, location: @category }
       else
         format.html { render action: 'new' }
         format.json { render json: @category.errors, status: :unprocessable_entity }
@@ -62,6 +63,11 @@ class CategoriesController < ApplicationController
   end
 
   private
+    
+    def admin_check
+      redirect_to root_url unless signed_in? && current_user.admin?
+    end
+
     # Use callbacks to share common setup or constraints between actions.
     def set_category
       @category = Category.find(params[:id])

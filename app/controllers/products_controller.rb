@@ -1,4 +1,5 @@
 class ProductsController < ApplicationController
+  before_action :admin_check, only: [:index, :new, :create, :show, :edit, :update, :destroy]
   before_action :set_product, only: [:show, :edit, :update, :destroy]
   before_action :set_product1, only: [:list]
   before_action :set_product2, only: [:details]
@@ -72,6 +73,11 @@ class ProductsController < ApplicationController
   end
 
   private
+
+    def admin_check
+      redirect_to root_url unless signed_in? && current_user.admin?
+    end
+
     # Use callbacks to share common setup or constraints between actions.
     def set_product
       @product = Product.find(params[:id])
