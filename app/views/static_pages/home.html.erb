@@ -2,7 +2,7 @@
 <div id="myCarousel" class="carousel slide">
       <div class="carousel-inner">
         <div class="item active">
-        	<%= image_tag @frontpage.carousel_pic1.url, class: "img-circle" %>
+        	<%= image_tag @frontpage.carousel_pic1.url %>
           <div class="container">
             <div class="carousel-caption">
               <h1><%= @frontpage.carousel_caption1 %></h1>
@@ -11,7 +11,7 @@
           </div>
         </div>
         <div class="item">
-          <%= image_tag @frontpage.carousel_pic2.url, class: "img-circle" %>
+          <%= image_tag @frontpage.carousel_pic2.url %>
           <div class="container">
             <div class="carousel-caption">
               <h1><%= @frontpage.carousel_caption2 %></h1>
@@ -20,7 +20,7 @@
           </div>
         </div>
         <div class="item">
-          <%= image_tag @frontpage.carousel_pic3.url, class: "img-circle" %>
+          <%= image_tag @frontpage.carousel_pic3.url %>
           <div class="container">
             <div class="carousel-caption">
               <h1><%= @frontpage.carousel_caption3 %></h1>
@@ -35,17 +35,17 @@
 <div class="container marketing">
       <div class="row">
         <div class="span4">
-			    <%= image_tag @frontpage.marketing_pic1.url %>
+			    <%= image_tag @frontpage.marketing_pic1.url, class: "img-circle" %>
           <h2><%= @frontpage.marketing_heading1 %></h2>
           <%= @frontpage.marketing_desc1.html_safe %>
         </div>
         <div class="span4">
-          <%= image_tag @frontpage.marketing_pic2.url %>
+          <%= image_tag @frontpage.marketing_pic2.url, class: "img-circle" %>
           <h2><%= @frontpage.marketing_heading2 %></h2>
           <%= @frontpage.marketing_desc2.html_safe %>
        </div>
         <div class="span4">
-          <%= image_tag @frontpage.marketing_pic3.url %>
+          <%= image_tag @frontpage.marketing_pic3.url, class: "img-circle" %>
           <h2><%= @frontpage.marketing_heading3 %></h2>
           <%= @frontpage.marketing_desc3.html_safe %>
         </div>
