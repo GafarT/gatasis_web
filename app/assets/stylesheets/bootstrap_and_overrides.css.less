@@ -29,6 +29,18 @@
 // Example:
 // @linkColor: #ff0000;
 
+.contact{
+  height: auto;
+  border: 1px solid black;
+  padding: 4px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+  text-align: center;
+  background: #463265;
+  color: white;
+  box-shadow: inset 0 3px 5px rgba(0,0,0,.5), 0 1px 0 rgba(255,255,255,.1);
+}
+
 /* CUSTOMIZE THE CAROUSEL
     -------------------------------------------------- */
 
@@ -201,7 +213,37 @@
       .marketing .span4{
         text-align: center;
       }
+      .span10 .logobrand{
+        text-align: center;
+      }
 
+      .promotions{
+        color: white;
+        padding-top: 10px;
+        margin-bottom: 10px;
+      }
+
+      .promo-left{
+        background: #1399bd;
+      }
+
+      .span6.promo-right{
+        background: #26ae90;
+      }
+
+      .content {
+        min-height: 50px;
+        padding: 0 0 0 70px;
+        position: relative;
+        padding-top: 15px;
+        padding-bottom: 10px;
+        margin-top: 5px;
+      }
+      .content img {
+        left: 0;
+        position: absolute;
+        top: 0px;
+      }
 
 
     /* RESPONSIVE CSS
@@ -295,19 +337,25 @@
       .carousel-caption .btn {
         font-size: 18px;
       }
-	  .featurette-heading {
+	    .featurette-heading {
         font-size: 30px;
       }
       .featurette .lead {
         font-size: 18px;
         line-height: 1.5;
       }
-            img.logobrand{
+      img.logobrand{
         display: block;
         padding: 5px 5px;
         margin-right: auto;
         margin-left: auto;
       }
+      .content img {
+        top: 5px;
+      }
+      .promo-left .content{
+      }
+
     }
 
 /* Footer */

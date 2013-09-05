@@ -91,3 +91,12 @@ iframe.contact{
   position: relative;
   z-index: -1; 
 }
+
+a.benefits, a:hover.benefits, a:link.benefits{
+  color:#fff;
+  opacity: .7;
+}
+
+img{
+  max-width:100%;
+}
