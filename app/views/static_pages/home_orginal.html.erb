@@ -1,0 +1,77 @@
+<% provide(:title , 'Home') %>
+<div id="myCarousel" class="carousel slide">
+      <div class="carousel-inner">
+        <div class="item active">
+        	<%= image_tag @frontpage.carousel_pic1.url %>
+          <div class="container">
+            <div class="carousel-caption">
+              <h1><%= @frontpage.carousel_caption1 %></h1>
+              <p class="lead"><%= @frontpage.carousel_lead1.html_safe %></p>
+            </div>
+          </div>
+        </div>
+        <div class="item">
+          <%= image_tag @frontpage.carousel_pic2.url %>
+          <div class="container">
+            <div class="carousel-caption">
+              <h1><%= @frontpage.carousel_caption2 %></h1>
+              <p class="lead"><%= @frontpage.carousel_lead2.html_safe %></p>
+            </div>
+          </div>
+        </div>
+        <div class="item">
+          <%= image_tag @frontpage.carousel_pic3.url %>
+          <div class="container">
+            <div class="carousel-caption">
+              <h1><%= @frontpage.carousel_caption3 %></h1>
+              <p class="lead"><%= @frontpage.carousel_lead3.html_safe %></p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <a class="left carousel-control" href="#myCarousel" data-slide="prev">&lsaquo;</a>
+      <a class="right carousel-control" href="#myCarousel" data-slide="next">&rsaquo;</a>
+ </div><!-- /.carousel -->
+<div class="promotions">
+  <div class="row">
+    <div class="span6 promo-left">
+      <div class="content">
+        <%= image_tag("promotion/thumb-bartender.png", class: 'small-left') %>
+        <p><strong>Seagull Scientific's Bartender</strong> the world's leading label and card printing management software. Suitable for any industrial standard applications. <a href="/categories/Seagull-Bartender-Software" class="benefits">See more details.</a></p>
+      </div>
+    </div>
+    <div class="span6 promo-right">
+      <div class="content">
+        <%= image_tag("promotion/thumb-weighscale.png", class: 'small-left') %>
+        <p>Accurate and quick-response Kingship weighing scale offers a simple counting function and durable stainless steel platter to meet user’s diversified weighing needs. <a href="/sub_categories/Weighing-Scale" class="benefits">See more details.</a></p>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="container marketing">
+      <div class="row">
+        <div class="span4">
+			    <%= image_tag @frontpage.marketing_pic1.url, class: "img-circle" %>
+          <h2><%= @frontpage.marketing_heading1 %></h2>
+          <%= @frontpage.marketing_desc1.html_safe %>
+        </div>
+        <div class="span4">
+          <%= image_tag @frontpage.marketing_pic2.url, class: "img-circle" %>
+          <h2><%= @frontpage.marketing_heading2 %></h2>
+          <%= @frontpage.marketing_desc2.html_safe %>
+       </div>
+        <div class="span4">
+          <%= image_tag @frontpage.marketing_pic3.url, class: "img-circle" %>
+          <h2><%= @frontpage.marketing_heading3 %></h2>
+          <%= @frontpage.marketing_desc3.html_safe %>
+        </div>
+      </div>
+   <hr class="divider">
+	<div class="row-fluid brands">
+		<div class="span10 offset1"><%= image_tag("brand-logo/tsclogosm.png", class: "logobrand") %>
+		<%= image_tag("brand-logo/cipherlablogosm.png", class: "logobrand") %>
+		<%= image_tag("brand-logo/brenmoorsm.png", class: "logobrand") %>
+		<%= image_tag("brand-logo/identiplussm.png", class: "logobrand") %>
+		<%= image_tag("brand-logo/bartendersm.png", class: "logobrand") %></div>
+	</div>
+</div>
