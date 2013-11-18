@@ -2,7 +2,7 @@
 <div id="myCarousel" class="carousel slide">
       <div class="carousel-inner">
         <div class="item active">
-        	<%= image_tag("carousel/slide-01.jpg", class: 'small-left') %>
+        	<%= image_tag @frontpage.carousel_pic1.url %>
           <div class="container">
             <div class="carousel-caption">
               <h1><%= @frontpage.carousel_caption1 %></h1>
