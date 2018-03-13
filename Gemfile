@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-
+ruby '2.4.3'
 #ruby-gemset=gatasis_rails_4_0
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
