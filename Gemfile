@@ -43,7 +43,7 @@ group :production do
 end
 
 gem 'simple_form'
-gem 'therubyracer'
+gem 'therubyracer', '0.12.3'
 gem 'less-rails'
 gem 'twitter-bootstrap-rails'
 
