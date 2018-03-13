@@ -44,6 +44,7 @@ end
 
 gem 'simple_form'
 gem 'therubyracer'
+gem 'lockfile'
 gem 'less-rails'
 gem 'twitter-bootstrap-rails'
 
