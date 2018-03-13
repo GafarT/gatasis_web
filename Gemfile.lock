@@ -161,7 +161,6 @@ DEPENDENCIES
   sdoc
   simple_form
   sqlite3
-  libv8 (3.16.14.15)
   therubyracer
   turbolinks (= 1.1.1)
   twitter-bootstrap-rails
