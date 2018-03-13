@@ -165,4 +165,3 @@ DEPENDENCIES
   turbolinks (= 1.1.1)
   twitter-bootstrap-rails
   uglifier (= 2.1.1)
-  lockfile
