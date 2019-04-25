@@ -1,6 +1,10 @@
 GEM
   remote: https://rubygems.org/
   specs:
+      actionview (= 5.0.2)
+      activemodel (= 5.0.2)
+      activejob (= 5.0.2)
+      actioncable (= 5.0.2)
     actionmailer (4.0.0)
       actionpack (= 4.0.0)
       mail (~> 2.5.3)
