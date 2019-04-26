@@ -6,7 +6,6 @@ ruby '2.4.6'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails'
 
-gem 'json','1.8.2'
 
 # Use sqlite3 as the database for Active Record
 group :development do
