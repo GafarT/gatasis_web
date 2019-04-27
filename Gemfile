@@ -46,11 +46,11 @@ end
 gem 'simple_form'
 gem 'therubyracer'
 gem 'less-rails'
-gem 'twitter-bootstrap-rails'
+gem 'twitter-bootstrap-rails','2.2.8'
 
 gem 'paperclip'
 
-gem 'sprockets','3.6.3'
+gem 'sprockets','2.10.1'
 
 gem 'paperclip-dropbox'
 
