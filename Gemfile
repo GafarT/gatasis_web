@@ -50,6 +50,8 @@ gem 'twitter-bootstrap-rails'
 
 gem 'paperclip'
 
+gem 'sprockets','3.6.3'
+
 gem 'paperclip-dropbox'
 
 gem 'bcrypt-ruby'
