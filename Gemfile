@@ -11,6 +11,7 @@ group :development do
 	gem 'sqlite3'
 end
 
+
 # Use SCSS for stylesheets
 gem 'sass-rails'
 
