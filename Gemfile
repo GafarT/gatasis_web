@@ -11,12 +11,13 @@ group :development do
 	gem 'sqlite3'
 end
 
+gem 'sqlite3'
 
 # Use SCSS for stylesheets
 gem 'sass-rails'
 
 # Use Uglifier as compressor for JavaScript assets
-gem 'uglifier', '2.1.1'
+gem 'uglifier'
 
 # Use CoffeeScript for .js.coffee assets and views
 gem 'coffee-rails'
@@ -25,13 +26,13 @@ gem 'coffee-rails'
 # gem 'therubyracer', platforms: :ruby
 
 # Use jquery as the JavaScript library
-gem 'jquery-rails', '2.2.1'
+gem 'jquery-rails'
 
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
-gem 'turbolinks', '1.1.1'
+gem 'turbolinks'
 
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
-gem 'jbuilder', '1.0.2'
+gem 'jbuilder'
 
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.
@@ -39,8 +40,8 @@ group :doc do
 end
 
 group :production do
-	gem 'pg', '0.15.1'
-	gem 'rails_12factor', '0.0.2'
+	gem 'pg'
+	gem 'rails_12factor'
 end
 
 gem 'simple_form'
@@ -48,11 +49,11 @@ gem 'therubyracer'
 gem 'less-rails'
 gem 'twitter-bootstrap-rails'
 
-gem 'paperclip', '~> 3.0'
+gem 'paperclip'
 
-gem 'paperclip-dropbox', '>= 1'
+gem 'paperclip-dropbox'
 
-gem 'bcrypt-ruby', '3.0.1'
+gem 'bcrypt-ruby'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
